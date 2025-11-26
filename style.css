@@ -1,243 +1,208 @@
-/* --- Variables de Diseño (Basadas en tu Logo) --- */
+/* --- 1. Variables y Configuración Global --- */
 :root {
-    --red-primary: #C8102E;      /* Rojo intenso del logo */
-    --red-dark: #900018;         /* Rojo más oscuro para sombras */
-    --gold-accent: #FFC107;      /* Amarillo del ala del águila */
-    --gold-hover: #FFB300;       /* Amarillo más oscuro al pasar mouse */
+    --primary-red: #D32F2F;      /* Rojo corporativo */
+    --primary-dark: #9A0007;     /* Rojo oscuro hover */
+    --accent-gold: #FFC107;      /* Dorado del logo */
+    --accent-blue: #2C3E50;      /* Azul para comisiones */
     --white: #ffffff;
-    --gray-light: #f4f4f4;
-    --text-dark: #222222;
+    --gray-bg: #f8f9fa;
+    --text-dark: #222;
     --font-main: 'Montserrat', sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
     font-family: var(--font-main);
     color: var(--text-dark);
     background-color: var(--white);
-    overflow-x: hidden; /* Evita scroll lateral en móviles */
+    overflow-x: hidden;
 }
 
-/* --- EFECTO AURORA METÁLICA (Tu requerimiento especial) --- */
+/* --- 2. Animaciones Especiales (La Magia) --- */
+
+/* Efecto Aurora para Texto (Ya lo teníamos) */
 .avance-aurora {
     font-weight: 900;
     text-transform: uppercase;
-    /* Degradado: Rojo -> Blanco Metálico -> Rojo */
-    background: linear-gradient(110deg, var(--red-primary) 20%, #ffffff 50%, var(--red-primary) 80%);
+    background: linear-gradient(110deg, var(--primary-red) 30%, #fff 50%, var(--primary-red) 70%);
     background-size: 200% auto;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    animation: shine 4s linear infinite;
-    display: inline-block;
+    animation: shineText 4s linear infinite;
 }
+@keyframes shineText { to { background-position: 200% center; } }
 
-@keyframes shine {
-    to { background-position: 200% center; }
-}
-
-/* Versión pequeña para footer */
-.avance-aurora-small {
-    font-weight: 800;
-    color: var(--red-primary); 
-    /* Efecto sutil */
-}
-
-/* --- Navegación --- */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 5%;
-    background: var(--white);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-logo {
-    height: 50px; /* Ajusta según tu imagen */
-    width: auto;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    transition: 0.3s;
-}
-
-.nav-links a:hover { color: var(--red-primary); }
-
-.btn-nav {
-    background-color: var(--red-primary);
-    color: var(--white) !important;
-    padding: 0.6rem 1.5rem;
-    border-radius: 50px;
-    transition: transform 0.2s;
-}
-.btn-nav:hover { background-color: var(--red-dark); }
-
-/* --- Hero Section --- */
-.hero {
-    height: 100vh;
-    background: linear-gradient(135deg, #1a1a1a, #4a0000); /* Fondo oscuro elegante */
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--white);
-    padding: 0 20px;
-}
-
-.hero-icon {
-    width: 120px;
-    height: auto;
-    margin-bottom: 20px;
-    border-radius: 50%; /* Por si la imagen tiene fondo gris cuadrado, esto la hace redonda */
-    border: 3px solid var(--gold-accent); /* Borde dorado usando el color del ala */
-}
-
-/* Animación de flotación suave para el águila */
+/* Efecto Flotante para el Logo */
 .floating { animation: float 6s ease-in-out infinite; }
 @keyframes float {
-    0% { transform: translateY(0px); }
+    0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
 }
 
-.main-title {
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    font-weight: 800;
+/* --- NUEVO: Efecto "Shine" para Botones --- */
+.shine-effect {
+    position: relative;
+    overflow: hidden; /* Importante para contener el brillo */
+    transition: all 0.3s ease;
 }
 
-.subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 2.5rem;
-    font-weight: 400;
-    opacity: 0.9;
+/* La barra de luz que pasa */
+.shine-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Empieza fuera a la izquierda */
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg); /* Inclinamos la luz */
+    transition: none;
 }
 
-.cta-group {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+/* Al pasar el mouse */
+.shine-effect:hover {
+    transform: translateY(-5px); /* Se levanta */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra difusa debajo */
 }
 
-.btn {
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 700;
-    text-transform: uppercase;
+.shine-effect:hover::after {
+    animation: shineSweep 0.7s; /* Dispara la animación de luz */
+}
+
+@keyframes shineSweep {
+    100% { left: 150%; } /* La luz viaja hasta salir por la derecha */
+}
+
+
+/* --- 3. Navegación --- */
+nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.8rem 5%; background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px); /* Efecto vidrio moderno */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky; top: 0; z-index: 1000;
+}
+.nav-logo { height: 45px; width: auto; }
+.nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
+.nav-item {
+    text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.9rem;
+    text-transform: uppercase; position: relative; transition: 0.3s;
+}
+.nav-item:hover { color: var(--primary-red); }
+
+/* Línea roja que aparece bajo los links del menú */
+.nav-item::after {
+    content: ''; position: absolute; width: 0; height: 2px;
+    bottom: -5px; left: 0; background-color: var(--primary-red);
+    transition: width 0.3s;
+}
+.nav-item:hover::after { width: 100%; }
+
+.btn-nav {
+    background-color: var(--primary-red); color: white !important;
+    padding: 0.6rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 700;
     transition: 0.3s;
 }
+.btn-nav:hover { background-color: var(--primary-dark); transform: scale(1.05); }
+.menu-toggle { display: none; }
 
-.btn-primary {
-    background-color: var(--gold-accent); /* Usamos el amarillo del logo para resaltar */
-    color: var(--text-dark);
+
+/* --- 4. Hero Section --- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #111 0%, #3e0000 100%);
+    position: relative; display: flex; align-items: center; justify-content: center;
+    text-align: center; color: var(--white); padding: 0 20px;
 }
-.btn-primary:hover { background-color: var(--gold-hover); transform: scale(1.05); }
+.hero-icon { width: 130px; border-radius: 50%; border: 3px solid var(--accent-gold); margin-bottom: 2rem; }
+.main-title { font-size: 3.5rem; line-height: 1.1; font-weight: 900; margin-bottom: 1rem; }
+.subtitle { font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9; letter-spacing: 1px; }
 
-.btn-secondary {
-    border: 2px solid var(--white);
-    color: var(--white);
+.cta-group { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+
+.btn {
+    padding: 1rem 2.5rem; border-radius: 5px; text-decoration: none;
+    font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
 }
-.btn-secondary:hover { background-color: var(--white); color: var(--red-primary); }
+.btn-primary { background-color: var(--accent-gold); color: var(--text-dark); }
+.btn-secondary { border: 2px solid var(--white); color: var(--white); }
+.btn-secondary:hover { background-color: var(--white); color: var(--primary-red); }
 
-/* --- Sección Equipo --- */
+
+/* --- 5. Tarjetas y Grid (Mesa, Comisiones, Consejeros) --- */
 .container { padding: 5rem 5%; text-align: center; }
-.divider {
-    height: 4px; width: 60px;
-    background-color: var(--red-primary);
-    margin: 1rem auto;
-}
+.bg-light { background-color: var(--gray-bg); } /* Fondo gris para diferenciar comisiones */
+
+.section-header h2 { font-size: 2.5rem; font-weight: 800; color: var(--text-dark); }
+.divider { height: 4px; width: 60px; background-color: var(--primary-red); margin: 1rem auto; border-radius: 2px; }
 
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem; margin-top: 3rem; justify-items: center;
 }
 
 .card {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    transition: 0.3s;
-    border-top: 4px solid transparent;
+    background: var(--white); padding: 2.5rem 1.5rem; border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05); width: 100%; max-width: 320px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid transparent; /* Línea superior invisible por defecto */
 }
-.card:hover { transform: translateY(-5px); border-top: 4px solid var(--red-primary); }
 
-.president-card {
-    border: 2px solid var(--red-primary); /* Destaca al presidente */
-    transform: scale(1.05);
+/* Animación Hover Tarjetas: Se levanta y brilla la sombra */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(211, 47, 47, 0.15); /* Sombra rojiza suave */
+    border-top: 5px solid var(--primary-red);
 }
 
 .photo-frame {
-    width: 100px; height: 100px;
-    margin: 0 auto 1rem;
-    border-radius: 50%;
-    overflow: hidden;
-    background: #ddd;
+    width: 110px; height: 110px; margin: 0 auto 1.5rem; border-radius: 50%;
+    overflow: hidden; background: #eee; border: 3px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
-.placeholder-img {
-    width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: bold; color: #666; font-size: 1.5rem;
+.placeholder-img { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #888; font-weight: 700; }
+
+.card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; font-weight: 700; }
+
+/* Badges (Etiquetas de Rol) */
+.role-badge { background: var(--primary-red); color: white; padding: 0.4rem 1.2rem; border-radius: 20px; font-weight: 700; font-size: 0.85rem; display: inline-block; }
+.role-badge-gray { background: #e0e0e0; color: #444; padding: 0.4rem 1.2rem; border-radius: 20px; font-weight: 700; font-size: 0.85rem; display: inline-block; }
+
+/* Estilos Específicos */
+.president-card { border: 2px solid var(--primary-red); transform: scale(1.05); }
+.president-card:hover { transform: scale(1.05) translateY(-10px); } /* Mantiene el tamaño grande al flotar */
+
+.vacancy { border: 2px dashed #ccc; background-color: #fafafa; opacity: 0.9; }
+.link-small { display: block; margin-top: 10px; color: var(--primary-red); font-weight: 700; text-decoration: none; }
+
+/* Comisiones */
+.commission-badge { background-color: var(--accent-blue); }
+
+/* Consejeros (Estilo Dorado) */
+.advisor-card { border-bottom: 4px solid var(--accent-gold); }
+.advisor-card:hover { border-top-color: var(--accent-gold); box-shadow: 0 15px 30px rgba(255, 193, 7, 0.2); }
+.role-badge-gold { background: var(--accent-gold); color: var(--text-dark); padding: 0.4rem 1.2rem; border-radius: 20px; font-weight: 700; font-size: 0.85rem; display: inline-block; }
+
+
+/* --- 6. Footer --- */
+footer { background-color: #1a1a1a; color: white; padding: 4rem 1rem; text-align: center; }
+.footer-logo { font-size: 2rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 1rem; }
+.socials { margin: 2rem 0; }
+.social-btn {
+    color: white; border: 1px solid rgba(255,255,255,0.3); padding: 0.5rem 1.5rem;
+    border-radius: 5px; text-decoration: none; margin: 0 0.5rem; transition: 0.3s;
 }
+.social-btn:hover { background: white; color: var(--primary-red); }
 
-.role-badge {
-    background-color: var(--red-primary);
-    color: var(--white);
-    padding: 0.3rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    display: inline-block;
-    margin: 0.5rem 0;
-}
 
-.role-badge-gray {
-    background-color: #eee;
-    color: #333;
-    padding: 0.3rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    display: inline-block;
-    margin: 0.5rem 0;
-}
-
-.vacancy { border: 2px dashed #ccc; opacity: 0.8; }
-
-/* --- Footer --- */
-footer {
-    background-color: #111;
-    color: #fff;
-    padding: 2rem;
-    text-align: center;
-}
-footer a { color: var(--white); text-decoration: none; margin: 0 10px; }
-
-/* --- Responsive --- */
+/* --- 7. Responsive Mobile --- */
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Ocultar menú en móvil para simplificar borrador */
-    .main-title { font-size: 2rem; }
-    .president-card { transform: scale(1); margin-bottom: 2rem; }
+    .nav-links { display: none; } /* Simplificado */
+    .menu-toggle { display: block; font-size: 1.5rem; cursor: pointer; }
+    .main-title { font-size: 2.2rem; }
+    .president-card { transform: scale(1); }
+    .president-card:hover { transform: translateY(-10px); }
 }
