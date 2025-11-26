@@ -1,8 +1,8 @@
 /* --- VARIABLES & RESET --- */
 :root {
-    --red-primary: #C8102E; /* Rojo Institucional Fuerte */
+    --red-primary: #C8102E; /* Rojo UDP */
     --red-dark: #960C22;
-    --gold-accent: #FFD700; /* Dorado para detalles premium */
+    --gold-accent: #FFD700;
     --gold-dark: #C5A000;
     --white: #ffffff;
     --light-gray: #f8f9fa;
@@ -60,7 +60,7 @@ body {
 /* --- HERO SECTION --- */
 .hero {
     background: linear-gradient(135deg, var(--white) 0%, #f0f0f0 100%);
-    min-height: 80vh;
+    min-height: 80vh; /* Altura mínima del 80% de la pantalla */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,7 +82,7 @@ body {
     line-height: 1.2;
 }
 
-/* Efecto Aurora en Texto */
+/* Efecto Aurora */
 .avance-aurora {
     background: linear-gradient(90deg, var(--red-primary), var(--red-dark), var(--white), var(--red-primary));
     background-size: 300%;
@@ -116,7 +116,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* Efecto Shine Sweep en botones */
 .shine-sweep::after {
     content: '';
     position: absolute;
@@ -167,17 +166,16 @@ body {
     font-size: 0.9rem;
 }
 
-/* Estilo Presidente (Destacado) */
+/* Presidente */
 .card-president {
     border: 2px solid var(--red-primary);
     transform: scale(1.05);
 }
-
 .card-president:hover {
     transform: scale(1.08);
 }
 
-/* Estilo Vacante (Instagram) */
+/* Vacantes */
 .card-vacante {
     border: 2px dashed #ccc;
     background-color: #fafafa;
@@ -207,7 +205,7 @@ body {
     color: var(--white);
 }
 
-/* Estilo Consejeros (Premium Gold) */
+/* Consejeros */
 .grid-consejeros {
     justify-content: center;
     max-width: 800px;
@@ -222,7 +220,7 @@ body {
     color: var(--gold-dark);
 }
 
-/* --- IMÁGENES (Placeholders) --- */
+/* Imágenes Placeholder */
 .card-img {
     width: 120px;
     height: 120px;
@@ -240,7 +238,7 @@ body {
     color: #999;
 }
 
-/* --- FORMULARIO INTEGRADO --- */
+/* --- FORMULARIO --- */
 .form-wrapper {
     background: var(--white);
     max-width: 800px;
