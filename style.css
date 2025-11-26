@@ -5,7 +5,8 @@
     --gold-accent: #FFD700;
     --gold-dark: #C5A000;
     --white: #ffffff;
-    --light-gray: #f8f9fa;
+    /* CAMBIO: Gris más oscuro para mejor contraste */
+    --light-gray: #ebedef; 
     --text-dark: #333333;
 }
 
@@ -43,6 +44,7 @@ body {
     font-weight: 800;
     color: var(--red-primary);
     text-transform: uppercase;
+    letter-spacing: -1px;
 }
 
 .divider {
@@ -57,10 +59,11 @@ body {
     background: var(--gold-accent);
 }
 
-/* --- HERO SECTION --- */
+/* --- HERO SECTION (Portada) --- */
 .hero {
-    background: linear-gradient(135deg, var(--white) 0%, #f0f0f0 100%);
-    min-height: 80vh; /* Altura mínima del 80% de la pantalla */
+    /* CAMBIO: Degradado con más contraste */
+    background: linear-gradient(135deg, var(--white) 30%, #e0e0e0 100%);
+    min-height: 80vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,7 +75,9 @@ body {
 .logo-float {
     max-width: 180px;
     margin-bottom: 1.5rem;
+    /* El PNG transparente hará que esto se vea genial */
     animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 10px 15px rgba(200, 16, 46, 0.2));
 }
 
 .slogan {
@@ -84,7 +89,7 @@ body {
 
 /* Efecto Aurora */
 .avance-aurora {
-    background: linear-gradient(90deg, var(--red-primary), var(--red-dark), var(--white), var(--red-primary));
+    background: linear-gradient(90deg, var(--red-primary), var(--red-dark), var(--gold-accent), var(--red-primary));
     background-size: 300%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -100,9 +105,10 @@ body {
     text-decoration: none;
     font-weight: 700;
     text-transform: uppercase;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    letter-spacing: 1px;
 }
 
 .btn-primary {
@@ -114,6 +120,7 @@ body {
 .btn-primary:hover {
     background-color: var(--red-dark);
     transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(200, 16, 46, 0.5);
 }
 
 .shine-sweep::after {
@@ -124,7 +131,7 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: 0.5s;
+    transition: 0.6s ease;
 }
 
 .shine-sweep:hover::after {
@@ -135,27 +142,34 @@ body {
 .grid-team {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem; /* Un poco más de espacio */
     justify-content: center;
 }
 
 .card {
     background: var(--white);
     border-radius: 15px;
-    padding: 2rem 1rem;
+    padding: 2.5rem 1.5rem;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-    border: 1px solid #eee;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    /* CAMBIO: Transición suave para múltiples propiedades */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
+/* CAMBIO: Nuevo efecto Hover "Pestaña Roja" sutil */
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-7px);
+    /* Sombra con tinte rojo */
+    box-shadow: 0 20px 40px rgba(200, 16, 46, 0.15);
+    /* Borde se vuelve rojizo sutilmente */
+    border-color: rgba(200, 16, 46, 0.3);
 }
 
 .card-info h3 {
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: var(--text-dark);
 }
 
@@ -163,49 +177,58 @@ body {
     display: block;
     color: var(--red-primary);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
-/* Presidente */
+/* Presidente (Destacado) */
 .card-president {
     border: 2px solid var(--red-primary);
     transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(200, 16, 46, 0.2);
 }
 .card-president:hover {
-    transform: scale(1.08);
+    transform: scale(1.08) translateY(-5px);
+    box-shadow: 0 25px 50px rgba(200, 16, 46, 0.3);
 }
 
-/* Vacantes */
+/* Vacantes (Estilo punteado) */
 .card-vacante {
     border: 2px dashed #ccc;
     background-color: #fafafa;
+}
+/* Las vacantes no deben tener el hover rojo intenso */
+.card-vacante:hover {
+    border-color: #999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .vacante-text {
     font-size: 0.85rem;
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: #666;
 }
 
 .btn-insta-vacante {
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     border: 2px solid var(--red-primary);
     color: var(--red-primary);
-    border-radius: 20px;
-    font-weight: 600;
+    border-radius: 30px;
+    font-weight: 700;
     text-decoration: none;
-    font-size: 0.85rem;
-    transition: all 0.3s;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
 }
 
 .btn-insta-vacante:hover {
     background: var(--red-primary);
     color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(200, 16, 46, 0.2);
 }
 
-/* Consejeros */
+/* Consejeros (Premium Gold) */
 .grid-consejeros {
     justify-content: center;
     max-width: 800px;
@@ -215,6 +238,10 @@ body {
 .card-gold {
     border-top: 4px solid var(--gold-accent);
 }
+.card-gold:hover {
+     border-color: var(--gold-accent);
+     box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+}
 
 .card-gold .role {
     color: var(--gold-dark);
@@ -222,23 +249,26 @@ body {
 
 /* Imágenes Placeholder */
 .card-img {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 1rem;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 1.5rem;
     border-radius: 50%;
     overflow: hidden;
     background: #eee;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 3px solid var(--white);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .placeholder-img {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #999;
+    font-weight: 600;
 }
 
-/* --- FORMULARIO --- */
+/* --- FORMULARIO INTEGRADO --- */
 .form-wrapper {
     background: var(--white);
     max-width: 800px;
@@ -247,15 +277,13 @@ body {
     box-shadow: 0 15px 40px rgba(200, 16, 46, 0.15);
     overflow: hidden;
     position: relative;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(200, 16, 46, 0.1);
 }
 
 .form-wrapper:hover {
     transform: translateY(-5px);
-}
-
-.shine-border {
-    border: 1px solid rgba(211, 47, 47, 0.15);
+    box-shadow: 0 25px 50px rgba(200, 16, 46, 0.25);
 }
 
 .form-wrapper iframe {
@@ -266,9 +294,10 @@ body {
 /* --- FOOTER --- */
 footer {
     background: var(--red-primary);
+    background: linear-gradient(to right, var(--red-dark), var(--red-primary));
     color: var(--white);
     text-align: center;
-    padding: 2rem;
+    padding: 3rem 1rem;
 }
 
 /* --- ANIMACIONES --- */
@@ -287,5 +316,6 @@ footer {
 @media (max-width: 768px) {
     .slogan { font-size: 1.8rem; }
     .card-president { transform: scale(1); }
-    .card-president:hover { transform: translateY(-10px); }
+    .card-president:hover { transform: translateY(-5px) scale(1.02); }
+    .container { padding: 3rem 1rem; }
 }
