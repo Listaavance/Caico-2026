@@ -4,87 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista AVANCE | CAICO 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="logo-icon.jpg">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <nav>
-        <div class="logo-container">
-            <img src="logo-header.jpg" alt="Logo Lista AVANCE" class="nav-logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="#inicio" class="nav-item">Inicio</a></li>
-            <li><a href="#equipo" class="nav-item">Mesa Directiva</a></li>
-            <li><a href="#comisiones" class="nav-item">Comisiones</a></li>
-            <li><a href="#consejeros" class="nav-item">Consejeros</a></li>
-            <li><a href="#contacto" class="btn-nav">Súmate</a></li>
-        </ul>
-        <div class="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </div>
-    </nav>
-
-    <section id="inicio" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <img src="logo-icon.jpg" alt="Águila AVANCE" class="hero-icon floating">
-            
-            <h1 class="main-title">
-                NO ESPERES EL CAMBIO.<br>
-                VOTA POR EL <span class="avance-aurora">AVANCE</span>
-            </h1>
-            
-            <p class="subtitle">Lista Postulante CAICO 2026 - Ingeniería Comercial</p>
-            
-            <div class="cta-group">
-                <a href="#propuestas" class="btn btn-primary shine-effect">Conoce las Propuestas</a>
-                <a href="#equipo" class="btn btn-secondary shine-effect">Nuestro Equipo</a>
+    <header class="hero">
+        <div class="hero-content container">
+            <div class="logo-container">
+                <img src="logo-header.jpg" alt="Logo Avance" class="logo-float">
             </div>
+            <h1 class="slogan">
+                No esperes el cambio. <br>
+                VOTA por el <span class="avance-aurora">AVANCE</span>
+            </h1>
+            <a href="#participa" class="btn btn-primary shine-sweep">Sumate al Proyecto</a>
         </div>
-    </section>
+    </header>
 
-    <section id="equipo" class="container">
+    <section id="mesa-directiva" class="container">
         <div class="section-header">
             <h2>Mesa Directiva</h2>
             <div class="divider"></div>
-            <p>Liderazgo y visión estratégica.</p>
+            <p>Liderazgo y compromiso para el 2026.</p>
         </div>
 
-        <div class="team-grid">
-            <div class="card president-card">
-                <div class="photo-frame">
-                    <div class="placeholder-img">JA</div>
+        <div class="grid-team">
+            <div class="card card-president">
+                <div class="card-img">
+                    <div class="placeholder-img">Foto Javier</div>
                 </div>
-                <h3>Javier Adasme</h3>
-                <span class="role-badge">Presidente</span>
+                <div class="card-info">
+                    <h3>Javier Adasme</h3>
+                    <span class="role">Presidente</span>
+                </div>
             </div>
 
             <div class="card">
-                <div class="photo-frame"><div class="placeholder-img">AS</div></div>
-                <h3>Antonia Stuardo</h3>
-                <span class="role-badge-gray">Vicepresidente</span>
+                <div class="card-info">
+                    <h3>Antonia Stuardo</h3>
+                    <span class="role">Vicepresidente</span>
+                </div>
             </div>
 
             <div class="card">
-                <div class="photo-frame"><div class="placeholder-img">IM</div></div>
-                <h3>Isidora Montes</h3>
-                <span class="role-badge-gray">Secretaria General</span>
+                <div class="card-info">
+                    <h3>Isidora Montes</h3>
+                    <span class="role">Secretaria General</span>
+                </div>
             </div>
 
             <div class="card">
-                <div class="photo-frame"><div class="placeholder-img">SR</div></div>
-                <h3>Sofía Robles</h3>
-                <span class="role-badge-gray">Sec. Finanzas</span>
+                <div class="card-info">
+                    <h3>Sofía Robles</h3>
+                    <span class="role">Secretaría de Finanzas</span>
+                </div>
             </div>
 
-            <div class="card vacancy">
-                <div class="photo-frame"><div class="placeholder-img">?</div></div>
-                <h3>Por Definir</h3>
-                <span class="role-badge-gray">Sec. Comunicaciones</span>
-                <p class="recruit-text">¿Te interesa?</p>
+            <div class="card">
+                <div class="card-info">
+                    <h3>Iker Ibarra</h3>
+                    <span class="role">Secretaría de Comunicaciones</span>
+                </div>
             </div>
         </div>
     </section>
@@ -93,64 +74,89 @@
         <div class="section-header">
             <h2>Comisiones</h2>
             <div class="divider"></div>
-            <p>El motor operativo de la lista.</p>
+            <p>Equipos de trabajo enfocados en áreas clave.</p>
         </div>
 
-        <div class="team-grid">
+        <div class="grid-team">
             <div class="card">
-                <div class="photo-frame"><div class="placeholder-img">BV</div></div>
-                <h3>Benjamín Valenzuela</h3>
-                <span class="role-badge commission-badge">Delegado Deporte</span>
+                <div class="card-info">
+                    <h3>Benjamín Valenzuela</h3>
+                    <span class="role">Comisión de Deporte</span>
+                </div>
             </div>
 
-            <div class="card vacancy">
-                <div class="photo-frame"><div class="placeholder-img">?</div></div>
-                <h3>Cupo Disponible</h3>
-                <span class="role-badge-gray">Del. Bienestar</span>
-                <a href="#contacto" class="link-small">Postular</a>
+            <div class="card card-vacante">
+                <div class="card-info">
+                    <h3>¿Te motiva ayudar?</h3>
+                    <span class="role">Comisión de Bienestar</span>
+                    <p class="vacante-text">Buscamos líderes en salud mental y calidad de vida.</p>
+                    <a href="https://www.instagram.com/listaavance/" target="_blank" class="btn-insta-vacante">
+                        Háblanos al Instagram
+                    </a>
+                </div>
             </div>
 
-            <div class="card vacancy">
-                <div class="photo-frame"><div class="placeholder-img">?</div></div>
-                <h3>Cupo Disponible</h3>
-                <span class="role-badge-gray">Del. Sustentabilidad</span>
-                <a href="#contacto" class="link-small">Postular</a>
+            <div class="card card-vacante">
+                <div class="card-info">
+                    <h3>Únete al cambio verde</h3>
+                    <span class="role">Comisión de Sustentabilidad</span>
+                    <p class="vacante-text">Lidera proyectos ecológicos en la facultad.</p>
+                    <a href="https://www.instagram.com/listaavance/" target="_blank" class="btn-insta-vacante">
+                        Háblanos al Instagram
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="consejeros" class="container">
         <div class="section-header">
-            <h2>Consejo Consultivo</h2>
-            <div class="divider"></div>
-            <p>Respaldo y experiencia CAICO 2025.</p>
+            <h2>Consejeros CAICO 2025</h2>
+            <div class="divider gold-divider"></div>
+            <p>Experiencia y continuidad.</p>
         </div>
 
-        <div class="team-grid">
-            <div class="card advisor-card">
-                <div class="photo-frame advisor-frame"><div class="placeholder-img">MA</div></div>
-                <h3>Mauro Aguero</h3>
-                <span class="role-badge-gold">Consejero de Finanzas</span>
+        <div class="grid-team grid-consejeros">
+            <div class="card card-gold">
+                <div class="card-info">
+                    <h3>Mauro Aguero</h3>
+                    <span class="role">Consejero de Finanzas</span>
+                </div>
             </div>
 
-            <div class="card advisor-card">
-                <div class="photo-frame advisor-frame"><div class="placeholder-img">JC</div></div>
-                <h3>Jose Cádiz</h3>
-                <span class="role-badge-gold">Consejero General</span>
+            <div class="card card-gold">
+                <div class="card-info">
+                    <h3>Jose Cádiz</h3>
+                    <span class="role">Consejero General</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer id="contacto">
-        <div class="footer-content">
-            <h2 class="footer-logo">AVANCE</h2>
-            <p>Súmate al cambio real en Ingeniería Comercial.</p>
-            <div class="socials">
-                <a href="#" class="social-btn">Instagram</a>
-                <a href="#" class="social-btn">WhatsApp</a>
-            </div>
-            <p class="copyright">&copy; 2026 Lista AVANCE.</p>
+    <section id="participa" class="container bg-light">
+        <div class="section-header">
+            <h2>Construyamos Juntos</h2>
+            <div class="divider"></div>
+            <p>Tu opinión es la base de nuestro proyecto.</p>
         </div>
+
+        <div class="form-wrapper shine-border">
+            <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSeYIQwPeCzFjZLGaU4pGrxD0wYfx7RMJfrG-2Jn3FB7YSgcUg/viewform?embedded=true" 
+                width="100%" 
+                height="850" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0"
+                title="Formulario AVANCE">
+                Cargando…
+            </iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Lista AVANCE - Ingeniería Comercial UDP</p>
+        <p style="font-size: 0.8rem; margin-top:5px; opacity: 0.7;">Síguenos en <a href="https://www.instagram.com/listaavance/" target="_blank" style="color:white; text-decoration: underline;">@listaavance</a></p>
     </footer>
 
 </body>
