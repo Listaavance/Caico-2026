@@ -2,163 +2,183 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <meta property="og:title" content="Lista AVANCE | CAICO 2026">
     <meta property="og:description" content="No esperes el cambio. Vota por el AVANCE.">
     <meta property="og:image" content="logo-icon.jpg">
-    
+
     <title>Lista AVANCE | CAICO 2026</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="hero">
-        <div class="hero-content container">
-            <div class="logo-container">
-                <img src="logo-header.png" alt="Logo Avance" class="logo-float">
+    <header class="hero d-flex align-items-center text-center">
+        <div class="container" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="logo-container mb-3">
+                <img src="logo-header.png" alt="Logo Avance" class="logo-float img-fluid">
             </div>
-            <h1 class="slogan">
+            <h1 class="slogan mb-4">
                 No esperes el cambio. <br>
                 VOTA por el <span class="avance-aurora">AVANCE</span>
             </h1>
-            <a href="#participa" class="btn btn-primary shine-sweep">Súmate al Proyecto</a>
+            <a href="#participa" class="btn btn-custom shine-sweep">
+                Súmate al Proyecto <i class="fas fa-arrow-right ms-2"></i>
+            </a>
         </div>
     </header>
 
-    <section id="mesa-directiva" class="container">
-        <div class="section-header">
-            <h2>Mesa Directiva</h2>
-            <div class="divider"></div>
-            <p>Liderazgo y compromiso.</p>
-        </div>
-
-        <div class="grid-team">
-            <div class="card card-president shine-hover">
-                <div class="card-info">
-                    <h3>Javier Adasme</h3>
-                    <span class="role">Presidente</span>
-                </div>
+    <section id="mesa-directiva" class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold text-danger">Mesa Directiva</h2>
+                <div class="divider mx-auto"></div>
+                <p class="text-muted">Liderazgo y compromiso real.</p>
             </div>
 
-            <div class="card shine-hover">
-                <div class="card-info">
-                    <h3>Antonia Stuardo</h3>
-                    <span class="role">Vicepresidente</span>
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-10 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card card-team card-president shine-hover text-center p-4 h-100">
+                        <div class="icon-avatar mb-3 text-danger"><i class="fas fa-user-tie fa-3x"></i></div>
+                        <h3 class="h5 fw-bold mb-1">Javier Adasme</h3>
+                        <span class="badge bg-danger rounded-pill mb-2">Presidente</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card shine-hover">
-                <div class="card-info">
-                    <h3>Isidora Montes</h3>
-                    <span class="role">Secretaria General</span>
+                <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card card-team shine-hover text-center p-3 h-100">
+                        <div class="icon-avatar mb-2 text-dark"><i class="fas fa-user fa-2x"></i></div>
+                        <h3 class="h6 fw-bold">Renato Farías</h3>
+                        <small class="text-danger fw-bold text-uppercase">Vicepresidente</small>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card shine-hover">
-                <div class="card-info">
-                    <h3>Sofía Robles</h3>
-                    <span class="role">Secretaría de Finanzas</span>
+                <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card card-team shine-hover text-center p-3 h-100">
+                        <div class="icon-avatar mb-2 text-dark"><i class="fas fa-file-signature fa-2x"></i></div>
+                        <h3 class="h6 fw-bold">Isidora Montes</h3>
+                        <small class="text-danger fw-bold text-uppercase">Sec. General</small>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card shine-hover">
-                <div class="card-info">
-                    <h3>Iker Ibarra</h3>
-                    <span class="role">Secretaría de Comunicaciones</span>
+                <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card card-team shine-hover text-center p-3 h-100">
+                        <div class="icon-avatar mb-2 text-dark"><i class="fas fa-coins fa-2x"></i></div>
+                        <h3 class="h6 fw-bold">Sofía Robles</h3>
+                        <small class="text-danger fw-bold text-uppercase">Finanzas</small>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="comisiones" class="container bg-light">
-        <div class="section-header">
-            <h2>Comisiones</h2>
-            <div class="divider"></div>
-        </div>
-
-        <div class="grid-team">
-            <div class="card shine-hover">
-                <div class="card-info">
-                    <h3>Benjamín Valenzuela</h3>
-                    <span class="role">Comisión de Deporte</span>
-                </div>
-            </div>
-
-            <div class="card card-vacante">
-                <div class="card-info">
-                    <h3>Espacio Seguro</h3>
-                    <span class="role">Comisión de Género</span>
-                    <a href="https://www.instagram.com/listaavance/" target="_blank" class="btn-insta-vacante">Únete</a>
-                </div>
-            </div>
-
-            <div class="card card-vacante">
-                <div class="card-info">
-                    <h3>¿Te motiva ayudar?</h3>
-                    <span class="role">Comisión de Bienestar</span>
-                    <a href="https://www.instagram.com/listaavance/" target="_blank" class="btn-insta-vacante">Únete</a>
-                </div>
-            </div>
-
-            <div class="card card-vacante">
-                <div class="card-info">
-                    <h3>Únete al cambio</h3>
-                    <span class="role">Comisión de Sustentabilidad</span>
-                    <a href="https://www.instagram.com/listaavance/" target="_blank" class="btn-insta-vacante">Únete</a>
+                <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card card-team shine-hover text-center p-3 h-100">
+                        <div class="icon-avatar mb-2 text-dark"><i class="fas fa-bullhorn fa-2x"></i></div>
+                        <h3 class="h6 fw-bold">Iker Ibarra</h3>
+                        <small class="text-danger fw-bold text-uppercase">Comunicaciones</small>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="consejeros" class="container">
-        <div class="section-header">
-            <h2>Consejeros</h2>
-            <div class="divider gold-divider"></div>
-            <p style="font-size: 0.85rem; max-width: 500px; margin: 0 auto; opacity: 0.8;">
-                Integrantes CAICO 2025 que actuarán como consejeros para el CAICO 2026.
-            </p>
-        </div>
-
-        <div class="grid-team grid-consejeros">
-            <div class="card card-gold shine-hover">
-                <div class="card-info">
-                    <h3>Mauro Aguero</h3>
-                    <span class="role">Consejero de Finanzas</span>
-                </div>
+    <section id="comisiones" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold text-danger">Comisiones</h2>
+                <div class="divider mx-auto"></div>
+                <p class="text-muted small">Áreas de trabajo fundamentales</p>
             </div>
-            <div class="card card-gold shine-hover">
-                <div class="card-info">
-                    <h3>Jose Cádiz</h3>
-                    <span class="role">Consejero General</span>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up">
+                    <div class="card card-team shine-hover text-center p-4 h-100">
+                        <div class="icon-avatar mb-3"><i class="fas fa-running fa-2x"></i></div>
+                        <h3 class="h5 fw-bold">Benjamín Valenzuela</h3>
+                        <span class="text-muted small text-uppercase fw-bold">Comisión Deporte</span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card card-team shine-hover text-center p-4 h-100">
+                        <div class="icon-avatar mb-3 text-danger"><i class="fas fa-hand-holding-heart fa-2x"></i></div>
+                        <h3 class="h5 fw-bold">Alan Valdes</h3>
+                        <span class="text-muted small text-uppercase fw-bold">Delegado de Bienestar</span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card card-vacante text-center p-4 h-100">
+                        <div class="icon-avatar mb-3 text-secondary"><i class="fas fa-venus-mars fa-2x"></i></div>
+                        <h3 class="h6 fw-bold">Comisión de Género</h3>
+                        <p class="small text-muted mb-3">Espacio seguro y equidad.</p>
+                        <a href="https://www.instagram.com/listaavance/" target="_blank" class="btn btn-outline-danger btn-sm rounded-pill">
+                            <i class="fab fa-instagram me-1"></i> Súmate
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card card-vacante text-center p-4 h-100">
+                        <div class="icon-avatar mb-3 text-success"><i class="fas fa-leaf fa-2x"></i></div>
+                        <h3 class="h6 fw-bold">Sustentabilidad</h3>
+                        <p class="small text-muted mb-3">Lidera el cambio verde.</p>
+                        <a href="https://www.instagram.com/listaavance/" target="_blank" class="btn btn-outline-danger btn-sm rounded-pill">
+                            <i class="fab fa-instagram me-1"></i> Súmate
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="participa" class="container bg-light">
-        <div class="section-header">
-            <h2>Construyamos Juntos</h2>
-            <div class="divider"></div>
-        </div>
+    <section id="participa" class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-4">
+                <h2 class="fw-bold text-danger">Construyamos Juntos</h2>
+                <div class="divider mx-auto"></div>
+            </div>
 
-        <div class="form-wrapper">
-            <iframe 
-                src="https://docs.google.com/forms/d/e/1FAIpQLSeYIQwPeCzFjZLGaU4pGrxD0wYfx7RMJfrG-2Jn3FB7YSgcUg/viewform?embedded=true" 
-                width="100%" 
-                height="800" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy">
-                Cargando…
-            </iframe>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="form-wrapper bg-white shadow-lg rounded-4 overflow-hidden border" data-aos="zoom-in-up">
+                        <iframe 
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSeYIQwPeCzFjZLGaU4pGrxD0wYfx7RMJfrG-2Jn3FB7YSgcUg/viewform?embedded=true" 
+                            width="100%" 
+                            height="800" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Lista AVANCE</p>
-        <p class="footer-link">Síguenos en <a href="https://www.instagram.com/listaavance/" target="_blank">@listaavance</a></p>
+    <footer class="bg-danger text-white text-center py-4 mt-5">
+        <p class="mb-1 fw-bold">Lista AVANCE 2026</p>
+        <p class="small opacity-75 mb-2">Ingeniería Comercial UDP</p>
+        <a href="https://www.instagram.com/listaavance/" class="text-white text-decoration-none btn btn-sm btn-outline-light rounded-pill px-3">
+            <i class="fab fa-instagram me-1"></i> @listaavance
+        </a>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800
+        });
+    </script>
 </body>
 </html>
