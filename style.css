@@ -26,7 +26,7 @@ body {
 /* --- 3. PORTADA (HERO) --- */
 .hero {
     background: radial-gradient(circle at center, #ffffff 0%, #f0f0f0 100%);
-    min-height: 85vh; /* Se ve bien en móviles y PC */
+    min-height: 85vh;
 }
 
 .logo-float {
@@ -41,7 +41,6 @@ body {
     line-height: 1.2;
 }
 
-/* Efecto Aurora (Texto Brillante) */
 .avance-aurora {
     background: linear-gradient(90deg, var(--red-primary), #ff4d6d, #fff, #ff4d6d, var(--red-primary));
     background-size: 200% auto;
@@ -72,7 +71,6 @@ body {
     box-shadow: 0 5px 20px rgba(200, 16, 46, 0.4);
 }
 
-/* Efecto Barrido de Luz en Botón */
 .shine-sweep::after {
     content: '';
     position: absolute;
@@ -94,13 +92,11 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Presidente Destacado */
 .card-president {
     border: 2px solid var(--red-primary);
-    background: #fffafa; /* Tinte muy sutil rojo */
+    background: #fffafa;
 }
 
-/* Vacantes */
 .card-vacante {
     background-color: transparent;
     border: 2px dashed #ccc;
@@ -113,7 +109,6 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* Efecto Brillo al pasar el mouse sobre tarjetas */
 .shine-hover::before {
     content: '';
     position: absolute;
@@ -134,23 +129,18 @@ body {
     transition: 0.7s;
 }
 
-/* --- 6. PESTAÑAS DE PROPUESTAS (TABS) --- */
-
-/* Contenedor del menú para permitir scroll en móvil */
+/* --- 6. PESTAÑAS (TABS) --- */
 .nav-wrapper {
     overflow-x: auto;
     white-space: nowrap;
-    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+    -webkit-overflow-scrolling: touch;
     padding-bottom: 5px; 
-    margin: 0 -10px; /* Para que llegue a los bordes en movil */
+    margin: 0 -10px;
     padding: 0 10px 10px 10px;
 }
-
-/* Scrollbar invisible pero funcional */
 .nav-wrapper::-webkit-scrollbar { height: 4px; }
 .nav-wrapper::-webkit-scrollbar-thumb { background: #ddd; border-radius: 10px; }
 
-/* Botones del menú (Pills) */
 .nav-custom .nav-link {
     color: #666;
     background-color: white;
@@ -174,37 +164,47 @@ body {
     border-color: var(--red-primary);
 }
 
-/* Tarjeta de Contenido de Propuestas */
+/* --- 7. MEJORA VISUAL PROPUESTAS (AQUÍ ESTÁ EL CAMBIO) --- */
 .proposal-card {
     background: white;
     border-radius: 20px;
-    max-width: 800px;
+    /* Aumenté el ancho máximo para que el texto respire más */
+    max-width: 900px; 
     margin: 0 auto;
 }
 
-/* Lista de propuestas */
 .proposal-list li {
-    margin-bottom: 15px;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    padding-left: 10px;
-    border-left: 3px solid transparent;
-    transition: border-left 0.3s;
+    /* Aumenté mucho el margen inferior para separar propuestas */
+    margin-bottom: 25px;
+    /* Agregué padding interno */
+    padding-bottom: 20px;
+    /* Línea sutil separadora */
+    border-bottom: 1px solid #f0f0f0;
+    
+    font-size: 1.05rem; /* Letra un poco más grande */
+    line-height: 1.8; /* Más espacio entre líneas de texto */
+    padding-left: 15px;
+    transition: transform 0.2s;
+}
+
+/* Quitar la línea al último elemento */
+.proposal-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
 }
 
 .proposal-list li:hover {
-    border-left: 3px solid var(--red-primary);
-    background-color: #fcfcfc;
+    transform: translateX(5px); /* Efecto sutil de movimiento al leer */
 }
 
-/* Iconos de la lista alineados */
 .proposal-list i {
-    margin-right: 12px;
-    width: 25px; 
+    margin-right: 15px;
+    width: 30px; 
     text-align: center;
+    font-size: 1.2rem; /* Iconos un poco más grandes */
 }
 
-/* --- 7. ANIMACIONES KEYFRAMES --- */
+/* --- 8. ANIMACIONES --- */
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-12px); }
@@ -214,13 +214,10 @@ body {
     to { background-position: 200% center; }
 }
 
-/* --- 8. MEDIA QUERIES (MÓVIL) --- */
+/* --- 9. MÓVIL --- */
 @media (max-width: 768px) {
     .slogan { font-size: 1.8rem; }
     .hero { min-height: 70vh; }
     .card-team { margin-bottom: 10px; }
-    
-    /* En móvil, los iconos de la lista de propuestas se ven mejor arriba */
-    .proposal-list li { padding-left: 0; border-left: none; }
-    .proposal-list li:hover { border-left: none; background: none; }
+    .proposal-list li { padding-left: 0; }
 }
