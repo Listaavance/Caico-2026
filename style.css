@@ -23,7 +23,44 @@ body {
     margin-bottom: 1rem;
 }
 
-/* --- 3. PORTADA (HERO) --- */
+/* --- 3. BOTÓN FLOTANTE INSTAGRAM --- */
+.floating-dm-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    /* Gradiente oficial de Instagram */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    z-index: 9999;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.floating-dm-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    color: white;
+}
+
+.floating-dm-btn span {
+    display: none; /* En móvil solo icono para ahorrar espacio */
+}
+
+@media (min-width: 768px) {
+    .floating-dm-btn span {
+        display: inline; /* En PC muestra texto */
+    }
+}
+
+/* --- 4. PORTADA (HERO) --- */
 .hero {
     background: radial-gradient(circle at center, #ffffff 0%, #f0f0f0 100%);
     min-height: 85vh;
@@ -50,7 +87,7 @@ body {
     animation: shineText 4s linear infinite;
 }
 
-/* --- 4. BOTONES --- */
+/* --- 5. BOTONES --- */
 .btn-custom {
     background-color: var(--red-primary);
     color: white;
@@ -81,7 +118,7 @@ body {
 }
 .shine-sweep:hover::after { left: 150%; }
 
-/* --- 5. TARJETAS (TEAM) --- */
+/* --- 6. TARJETAS (TEAM) --- */
 .card-team {
     border: none;
     background: white;
@@ -129,27 +166,41 @@ body {
     transition: 0.7s;
 }
 
-/* --- 6. PESTAÑAS (TABS) --- */
+/* --- 7. PESTAÑAS (TABS FIXED) --- */
 .nav-wrapper {
     overflow-x: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 5px; 
-    margin: 0 -10px;
-    padding: 0 10px 10px 10px;
+    padding-bottom: 10px; 
+    margin: 0; 
+    padding: 0 5px 10px 5px;
+    width: 100%;
 }
+
 .nav-wrapper::-webkit-scrollbar { height: 4px; }
 .nav-wrapper::-webkit-scrollbar-thumb { background: #ddd; border-radius: 10px; }
+
+.nav-custom {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    justify-content: flex-start; /* Clave para móvil */
+}
+
+@media (min-width: 768px) {
+    .nav-custom { justify-content: center; }
+}
 
 .nav-custom .nav-link {
     color: #666;
     background-color: white;
     border: 1px solid #eee;
-    margin: 0 5px;
     border-radius: 50px;
-    padding: 10px 25px;
+    padding: 10px 20px;
     font-weight: 600;
+    white-space: nowrap;
     transition: all 0.3s ease;
+    font-size: 0.9rem;
 }
 
 .nav-custom .nav-link:hover {
@@ -164,47 +215,41 @@ body {
     border-color: var(--red-primary);
 }
 
-/* --- 7. MEJORA VISUAL PROPUESTAS (AQUÍ ESTÁ EL CAMBIO) --- */
+/* --- 8. ESTILO PROPUESTAS --- */
 .proposal-card {
     background: white;
     border-radius: 20px;
-    /* Aumenté el ancho máximo para que el texto respire más */
     max-width: 900px; 
     margin: 0 auto;
 }
 
 .proposal-list li {
-    /* Aumenté mucho el margen inferior para separar propuestas */
     margin-bottom: 25px;
-    /* Agregué padding interno */
     padding-bottom: 20px;
-    /* Línea sutil separadora */
     border-bottom: 1px solid #f0f0f0;
-    
-    font-size: 1.05rem; /* Letra un poco más grande */
-    line-height: 1.8; /* Más espacio entre líneas de texto */
+    font-size: 1.05rem;
+    line-height: 1.8;
     padding-left: 15px;
     transition: transform 0.2s;
 }
 
-/* Quitar la línea al último elemento */
 .proposal-list li:last-child {
     border-bottom: none;
     margin-bottom: 0;
 }
 
 .proposal-list li:hover {
-    transform: translateX(5px); /* Efecto sutil de movimiento al leer */
+    transform: translateX(5px);
 }
 
 .proposal-list i {
     margin-right: 15px;
     width: 30px; 
     text-align: center;
-    font-size: 1.2rem; /* Iconos un poco más grandes */
+    font-size: 1.2rem;
 }
 
-/* --- 8. ANIMACIONES --- */
+/* --- 9. ANIMACIONES & MEDIA --- */
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-12px); }
@@ -214,7 +259,6 @@ body {
     to { background-position: 200% center; }
 }
 
-/* --- 9. MÓVIL --- */
 @media (max-width: 768px) {
     .slogan { font-size: 1.8rem; }
     .hero { min-height: 70vh; }
