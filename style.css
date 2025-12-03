@@ -23,40 +23,52 @@ body {
     margin-bottom: 1rem;
 }
 
-/* --- 3. BOTÓN FLOTANTE INSTAGRAM --- */
+/* --- 3. BOTÓN FLOTANTE INSTAGRAM (Efecto Metalizado Rojo-Blanco) --- */
 .floating-dm-btn {
     position: fixed;
     bottom: 25px;
     right: 25px;
-    /* Gradiente oficial de Instagram */
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    color: white;
+    
+    /* GRADIENTE ANIMADO (METAL) */
+    background: linear-gradient(120deg, var(--red-primary) 0%, #ff4d6d 25%, #ffffff 50%, #ff4d6d 75%, var(--red-primary) 100%);
+    background-size: 200% auto;
+    animation: metalFlow 3s linear infinite;
+    
+    color: white; /* Texto blanco */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4); /* Sombra para legibilidad cuando pase el blanco */
+    
     padding: 12px 25px;
     border-radius: 50px;
     font-weight: 700;
     font-size: 0.95rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 5px 20px rgba(200, 16, 46, 0.4); /* Sombra roja */
     z-index: 9999;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 10px;
     transition: all 0.3s ease;
+    border: 2px solid white; /* Borde blanco fino para resaltar */
+}
+
+/* Animación del movimiento del brillo */
+@keyframes metalFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
 }
 
 .floating-dm-btn:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-    color: white;
+    box-shadow: 0 10px 25px rgba(200, 16, 46, 0.5);
 }
 
 .floating-dm-btn span {
-    display: none; /* En móvil solo icono para ahorrar espacio */
+    display: none; /* Móvil: solo icono */
 }
 
 @media (min-width: 768px) {
     .floating-dm-btn span {
-        display: inline; /* En PC muestra texto */
+        display: inline; /* PC: icono + texto */
     }
 }
 
